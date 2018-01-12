@@ -10,25 +10,24 @@ const model = require("../models/model.js");
 exports.getAllAstronauts = function(req, res) {
 	console.log("\nfunzione getAllAstronauts");
 	var all = Db.getAll();
-	/*if(req.query.studentid !== undefined){
-		var id = req.query.studentid;
+	if(req.query.lastName !== undefined){
+		var cognome = req.query.lastName;
 		var list = [];
 		for(i = 0; i < all.length; i++){
-			if(all[i]['studentId'] == id){
+			if(all[i]['lastName'] == cognome){
 				list.push(all[i]);
 			}
 		}
 
 		if(list.length==0){
-
-			return res.json({message: 'Student Id non trovato'});
+			return res.json({message: 'Lastname non trovato'});
 		}else{
 			return res.json(list);
 		}
 	} else {
-		return res.json(all);
-	}*/
-	return(res.json(all));
+		return(res.json(all));
+	}
+	
 };
 
 exports.sendAstronauts = function (req, res) {
