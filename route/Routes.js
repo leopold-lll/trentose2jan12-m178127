@@ -5,12 +5,12 @@ const model = require("../models/model.js");
 // dato da path:  req.params.id
 // dato da body:  req.body.studentId
 
-//assignment
+//astronauts
 
-exports.getAllAssignments = function(req, res) {
-	console.log("\nfunzione getAllAssignments");
+exports.getAllAstronauts = function(req, res) {
+	console.log("\nfunzione getAllAstronauts");
 	var all = Db.getAll();
-	if(req.query.studentid !== undefined){
+	/*if(req.query.studentid !== undefined){
 		var id = req.query.studentid;
 		var list = [];
 		for(i = 0; i < all.length; i++){
@@ -27,28 +27,28 @@ exports.getAllAssignments = function(req, res) {
 		}
 	} else {
 		return res.json(all);
-	}
+	}*/
+	return(res.json(all));
 };
 
-exports.sendAssignmentById = function (req, res) {
-	console.log("\nfunzione sendAssignmentById");
+exports.sendAstronauts = function (req, res) {
+	console.log("\nfunzione sendAstronauts");
 	var new_id = Db.length();
 	var new_obj;
 
-	assignmentId = new_id;
-	studentId = req.body.studentId;
-	assignmentType = req.body.assignmentType;
-	assignmentContent= req.body.assignmentContent;
- 	new_obj = new model(assignmentId, studentId, assignmentType, assignmentContent);
+	astronautsID = new_id;
+	firstName = req.body.firstName;
+	lastName = req.body.lastName;
+	isInSpace= req.body.isInSpace;
+ 	new_obj = new model(astronautsID, firstName, lastName, isInSpace);
 
  	console.log("add NODE: " + JSON.stringify(new_obj));
 	Db.insert(new_obj);
 	return res.sendStatus(200);
-	//return res.json({message: 'Assignment aggiunto'});
 };
 
-//assignment/:id
-
+//astronauts/:id
+/*
 exports.getAssignmentById = function(req, res) {
 	console.log("\nfunzione getAssignmentById");
 	var id = req.params.id;
@@ -95,4 +95,4 @@ exports.deleteAllAssignment = function(req, res) {
 	console.log("\nfunzione deleteAllAssignment");
 	Db.drop();
 	return res.sendStatus(200);
-};
+};*/

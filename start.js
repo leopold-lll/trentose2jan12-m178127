@@ -15,18 +15,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // routig prefix
-app.use("/base_path", Router);
+app.use("/astronauts", Router);
 
 // routing
 Router.route('/')
-  .get(Routes.getAllAssignments)
-  .post(Routes.sendAssignmentById)
-  .delete(Routes.deleteAllAssignment);
-  
+  .get(Routes.getAllAstronauts)
+  .post(Routes.sendAstronauts);
+/*
 Router.route('/:id')
-  .get(Routes.getAssignmentById)
-  .put(Routes.updateAssignmentById)
-  .delete(Routes.removeAssignmentById);
+  .get(Routes.getAstronautsById)
+  .put(Routes.updateAstronautsById);*/
 
 
 // Set the port number

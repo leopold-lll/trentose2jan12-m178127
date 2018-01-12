@@ -42,7 +42,7 @@ exports.updateById = function(id, node){
 var search = function(id){
 	var index = -1;
 	for(i = 0; i < db.length; i++){
-		if(db[i]["assignmentId"] == id){
+		if(db[i]["astronautsID"] == id){
 			index = i;
 			break;
 		}
