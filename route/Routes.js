@@ -48,9 +48,9 @@ exports.sendAstronauts = function (req, res) {
 };
 
 //astronauts/:id
-/*
-exports.getAssignmentById = function(req, res) {
-	console.log("\nfunzione getAssignmentById");
+
+exports.getAstronautsById = function(req, res) {
+	console.log("\nfunzione getAstronautsById");
 	var id = req.params.id;
 	var element = Db.getById(id);
 	if (element !== undefined){
@@ -60,7 +60,7 @@ exports.getAssignmentById = function(req, res) {
 		return res.sendStatus(400);
 	}
 };
-
+/*
 exports.removeAssignmentById = function(req, res) {
 	console.log("\nfunzione removeAssignmentById");
 	var id = req.params.id;
