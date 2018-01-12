@@ -60,39 +60,21 @@ exports.getAstronautsById = function(req, res) {
 		return res.sendStatus(400);
 	}
 };
-/*
-exports.removeAssignmentById = function(req, res) {
-	console.log("\nfunzione removeAssignmentById");
-	var id = req.params.id;
-	var element = Db.getById(id);
-	if (element !== undefined){
-		Db.removeById(id);
-		return res.json({message: 'Assignment ' + id + ' eliminato'});
-	} else {
-		return res.json({message: 'Assignment non trovato'});
-	}
-};
 
-exports.updateAssignmentById = function(req, res) {	
-	console.log("\nfunzione updateAssignmentById");
+exports.updateAstronautsById = function(req, res) {	
+	console.log("\nfunzione updateAstronautsById");
 	var id = req.params.id;
-	console.log("id: " + id);
+	//console.log("id: " + id);
 	var found = Db.getById(id);
 	if (found !== undefined){
-		studentId = req.body.studentId;
-		assignmentType = req.body.assignmentType;
-		assignmentContent= req.body.assignmentContent;
-		obj = new model(id, studentId, assignmentType, assignmentContent);
-		console.log(JSON.stringify(obj))
+		firstName = req.body.firstName;
+		lastName = req.body.lastName;
+		isInSpace= req.body.isInSpace;
+		obj = new model(id, firstName, lastName, isInSpace);
+		//console.log(JSON.stringify(obj))
 		Db.updateById(id, obj);
-		return res.json({message: 'Assignment ' + id + ' aggiornato'});
+		return res.json({message: 'Astronaut ' + id + ' aggiornato'});
 	} else {
-		return res.json({message: 'Assignment non trovato'});
+		return res.json({message: 'Astronaut non trovato'});
 	}
 };
-
-exports.deleteAllAssignment = function(req, res) {
-	console.log("\nfunzione deleteAllAssignment");
-	Db.drop();
-	return res.sendStatus(200);
-};*/

@@ -23,8 +23,8 @@ Router.route('/')
   .post(Routes.sendAstronauts);
 
 Router.route('/:id')
-  .get(Routes.getAstronautsById);/*
-  .put(Routes.updateAstronautsById);*/
+  .get(Routes.getAstronautsById)
+  .put(Routes.updateAstronautsById);
 
 
 // Set the port number
