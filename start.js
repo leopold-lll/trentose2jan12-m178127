@@ -21,9 +21,9 @@ app.use("/astronauts", Router);
 Router.route('/')
   .get(Routes.getAllAstronauts)
   .post(Routes.sendAstronauts);
-/*
+
 Router.route('/:id')
-  .get(Routes.getAstronautsById)
+  .get(Routes.getAstronautsById);/*
   .put(Routes.updateAstronautsById);*/
 
 
